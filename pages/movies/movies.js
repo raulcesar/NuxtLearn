@@ -9,4 +9,8 @@ export default {
       this.$router.push(`/movies/${this.movieID}`)
     }
   }
+  // ,
+  // validate(data) {
+  //   console.log(`data: ${data}`);
+  // }
 }
