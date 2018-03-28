@@ -1,11 +1,11 @@
 <div>
   <h1>List of movies</h1>
   <ul>
-    <li>
-      <nuxt-link to="/movies/1">Movie</nuxt-link>
+    <li v-for="movie in movies">
+      <nuxt-link to="/movies/movie.id">{{movie.title}}</nuxt-link>
     </li>
   </ul>
 
-  <input type="text" v-model="movieID"> {{movieID}}
-  <button @click="onLoadMovie">Load movie</button>
+  <!-- <input type="text" v-model="movieID"> {{movieID}} -->
+  <!-- <button @click="onLoadMovie">Load movie</button> -->
 </div>
