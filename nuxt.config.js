@@ -1,6 +1,10 @@
-const pkg = require('./package')
+const pkg = require('./package');
+const nodeExternals = require('webpack-node-externals');
+const webpack = require('webpack')
+require('dotenv').config();
 
-const nodeExternals = require('webpack-node-externals')
+const apiHost = process.env.API_HOST;
+console.log(`apiHost: ${apiHost}`);
 
 module.exports = {
   mode: 'universal',
@@ -54,6 +58,9 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
+  env: {
+    API_HOST: apiHost
+  },
 
   /*
   ** Build configuration
@@ -79,6 +86,16 @@ module.exports = {
           })
         ]
       }
-    }
+
+
+    },
+
+    // plugins: [
+    //   new webpack.DefinePlugin({
+    //     __APIHOST__: 'zebu'
+    //   })
+    // ]
+
+
   }
 }

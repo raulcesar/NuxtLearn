@@ -6,16 +6,18 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "raul": "API_HOST=http://infocedi.bla.bla/ nuxt",
+    "build": "API_HOST=http://infocedi.bla.bla/ nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.0.0",
+    "dotenv": "^5.0.1",
     "nuxt": "^1.0.0",
-    "vuetify": "^0.17.3",
-    "@nuxtjs/axios": "^5.0.0"
+    "vuetify": "^0.17.3"
   },
   "devDependencies": {
     "cross-env": "^5.0.1",

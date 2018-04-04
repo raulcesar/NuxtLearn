@@ -1,6 +1,21 @@
+import { mapState } from 'vuex'
+
+
+
 export default {
+  computed: {
+    zebu() {
+       return this.$store.state.counter + 3;
+    },
+    ...mapState([
+      // map this.count to store.state.count
+      'counter'
+    ])
+
+  },
+
   validate(data) {
-    console.log(`data: ${JSON.stringify(data)}`);
+    // console.log(`data: ${JSON.stringify(data)}`);
     return true;
 
   }

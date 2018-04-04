@@ -1,29 +1,34 @@
 export default {
-  // data() {
-  //   return {
-  //     movieID: '',
-  //     movies: []
-  //   }
-  // },
+  data() {
+    return {
+      api: process.env.API_HOST
+    }
+  },
   methods: {
     onLoadMovie () {
       this.$router.push(`/movies/${this.movieID}`)
     }
   },
-  asyncData () {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          movieID: '',
-          movies: [{ id: 1, title: 'Movie 1' }]
-        });
-      }, 1500);
-
+  computed: {
+    movies() {
+       return this.$store.state.movies.movies;
     }
-
-
-    );
   },
+
+  // asyncData () {
+  //   return new Promise((resolve) => {
+  //     setTimeout(() => {
+  //       resolve({
+  //         movieID: '',
+  //         movies: []
+  //       });
+  //     }, 1500);
+
+  //   }
+
+
+  //   );
+  // },
   // created() {
   //   setTimeout(() => {
   //     this.movies.push({id: 1, title: 'Movie 1'})
